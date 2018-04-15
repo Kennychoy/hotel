@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<title>Hotel Landing Page</title>
+<style>
+@media screen and (min-width: 1200px) {
+	*, html, body {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		font-family: 'Anton', sans-serif;
+	}
+	body {
+		width: 100vw;
+		height: 100vh;
+		max-width: 100vw;
+		max-height: 100vh;
+		min-width: 100vw;
+		min-height: 100vh;
+		background: black;
+		position: relative;
+	}
+	#wrapper {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 80%;
+		height: 80%;
+		border: 5px solid orange;
+		border-radius: 10px;
+	}
+	#title {
+		width: 100%;
+		height: 15%;
+		color: orange;
+		display: flex;
+		border-bottom: 5px solid orange;
+		font-size: 2rem;
+		letter-spacing: .5rem;
+	}
+	center {
+		margin: auto;
+	}
+	#flex-wrapper {
+		display: flex;
+		width: 100%;
+		height: 85%;
+	}
+	.flex-col, .hotel-summary-bg {
+		flex: 1;
+		height: 100%;		
+		overflow: hidden;
+		position: relative;
+		transition: flex .3s;
+	}
+	#hotel-rooms {
+		background: url("hotel-rooms.jpg") no-repeat center center;
+		background-size: cover;
+	}
+	#hotel-facilities {
+		background: url("hotel-facilities.jpg") no-repeat center center;
+		background-size: cover;
+	}
+	#hotel-fandb {
+		background: url("hotel-fandb.jpg") no-repeat center center;
+		background-size: cover;
+	}
+	#hotel-lounge {
+		background: url("hotel-lounge.jpg") no-repeat center center;
+		background-size: cover;
+	}
+	#hotel-environment {
+		background: url("hotel-environment.jpg") no-repeat center center;
+		background-size: cover;
+	}
+	.inner-flex, .hotel-summary-sm {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(255, 255, 255, .6);
+		cursor: pointer;
+		transition: background 1s;
+	}	
+	.inner-flex:hover {
+		background: transparent;
+	}
+	#hotel-summary .inner-flex {
+		display: flex;
+		flex-direction: column;
+	}
+	#hotel-summary-bg-1 {
+		background: url("hotel-environment-sm-1.jpg") no-repeat center center;
+		background-size: cover;	
+	}
+	#hotel-summary-bg-2 {
+		background: url("hotel-facilities-sm-1.jpg") no-repeat center center;
+		background-size: cover;	
+	}
+	#hotel-summary-bg-3 {
+		background: url("hotel-fandb-sm-1.jpg") no-repeat center center;
+		background-size: cover;	
+	}
+	#hotel-summary-bg-4 {
+		background: url("hotel-lounge-sm-1.jpg") no-repeat center center;
+		background-size: cover;	
+	}
+	#hotel-summary-bg-5 {
+		background: url("hotel-rooms-sm-1.jpg") no-repeat center center;
+		background-size: cover;	
+	}
+	.flex-col:not(#hotel-summary):hover{
+		flex:3
+	}
+	.inner-flex-title {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		color: orange;
+		font-size: 1.4rem;
+		letter-spacing: .1rem;
+		animation-duration: 1s;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+	}
+	
+	@keyframes fadeOutText {
+		0% {color: orange; letter-spacing: 0.1rem;}
+		25% {color: orange; letter-spacing: 0.25rem;}
+		50% {color: #ffd699;  letter-spacing: 0.5rem;}
+		75% {color: #fff5e6; letter-spacing: 0.75rem;}
+		100% {color: transparent}
+	}
+	
+	.slide-down {
+		position: absolute;
+		left: 0;
+		top: -100%;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		//animation-name: slideDown;
+		animation-duration: .5s;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+	}
+	
+	@keyframes slideDown {
+		0% {top: -100%}
+		25% {top: -75%}
+		50% {top: -50%}
+		75% {top: -25%}
+		100% {top: 0}
+	}
+	
+	@keyframes slideUp {
+		0% {top: 0}
+		25% {top: -25%}
+		50% {top: -50%}
+		75% {top: -75%}
+		100% {top: -100%}
+	}
+	
+	.slide-down-divs{
+		flex: 1;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+}
+</style>
+</head>
+<body>
+<div id="container">
+	<div id="wrapper">
+		<div id="title"><center>WELCOME TO EXAMPLE HOTEL<center></div>
+		<div id="flex-wrapper">
+			<div class="flex-col" id="hotel-rooms">
+				<div class="inner-flex">
+					<div class="inner-flex-title">ROOMS</div>
+				</div>
+			</div>
+			<div class="flex-col" id="hotel-facilities">
+				<div class="inner-flex">
+					<div class="inner-flex-title">FACILITIES</div>
+				</div>
+			</div>
+			<div class="flex-col" id="hotel-fandb">
+				<div class="inner-flex">
+					<div class="inner-flex-title">F & B</div>
+				</div>
+			</div>
+			<div class="flex-col" id="hotel-lounge">
+				<div class="inner-flex">
+					<div class="inner-flex-title">LOUNGE</div>
+				</div>
+			</div>
+			<div class="flex-col" id="hotel-environment">
+				<div class="inner-flex">
+					<div class="inner-flex-title">ENVIRONMENT</div>
+				</div>
+			</div>
+			
+			<div class="flex-col" id="hotel-summary">
+			
+				<div class="inner-flex">
+					<div class="hotel-summary-bg" id="hotel-summary-bg-1">
+						<div class="hotel-summary-sm"></div>
+					</div>
+					<div class="hotel-summary-bg" id="hotel-summary-bg-2">
+						<div class="hotel-summary-sm"></div>
+					</div>
+					<div class="hotel-summary-bg" id="hotel-summary-bg-3">
+						<div class="hotel-summary-sm"></div>
+					</div>
+					<div class="hotel-summary-bg" id="hotel-summary-bg-4">
+						<div class="hotel-summary-sm"></div>
+					</div>
+					<div class="hotel-summary-bg" id="hotel-summary-bg-5">
+						<div class="hotel-summary-sm"></div>
+					</div>
+				</div>
+				
+				<div class="slide-down" id="slide-down-rooms">
+					<div class="slide-down-divs"></div>
+					<div class="slide-down-divs"></div>
+					<div class="slide-down-divs"></div>
+					<div class="slide-down-divs"></div>
+					<div class="slide-down-divs"></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<script>
+var slideDownPics = [
+	["hotel-rooms-sm-1.jpg", "hotel-rooms-sm-2.jpg", "hotel-rooms-sm-3.jpg", "hotel-rooms-sm-4.jpg", "hotel-rooms-sm-5.jpg"], 
+	["hotel-facilities-sm-1.jpg", "hotel-facilities-sm-2.jpg", "hotel-facilities-sm-3.jpg", "hotel-facilities-sm-4.jpg", "hotel-facilities-sm-5.jpg"], 
+	["hotel-fandb-sm-1.jpg", "hotel-fandb-sm-2.jpg", "hotel-fandb-sm-3.jpg", "hotel-fandb-sm-4.jpg", "hotel-fandb-sm-5.jpg"], 
+	["hotel-lounge-sm-1.jpg", "hotel-lounge-sm-2.jpg", "hotel-lounge-sm-3.jpg", "hotel-lounge-sm-4.jpg", "hotel-lounge-sm-5.jpg"], 
+	["hotel-environment-sm-1.jpg", "hotel-environment-sm-2.jpg", "hotel-environment-sm-3.jpg", "hotel-environment-sm-4.jpg", "hotel-environment-sm-5.jpg"]
+]
+
+for(let i=0; i<slideDownPics.length; i++){
+	for(let j=0; j<slideDownPics[i].length; j++){
+		slideDownPics[i][j].src = new Image();
+	}
+}
+
+document.querySelectorAll(".inner-flex").forEach(innerFlex => innerFlex.addEventListener('mouseenter', (e)=> {
+	e.target.children[0].style.animationName = "fadeOutText";
+}));
+
+document.querySelectorAll(".inner-flex").forEach(innerFlex => innerFlex.addEventListener('mouseleave', (e)=> {
+	e.target.children[0].style.animationName = "";
+}));
+
+document.querySelectorAll(".flex-col:not(#hotel-summary)").forEach(col => col.addEventListener('mouseenter', (e) => {
+	let parentArr = Array.from(e.target.parentElement.children);
+	let index = parentArr.indexOf(e.target);
+	let slideDownArr = Array.from(document.querySelector(".slide-down").children);
+	for(let i=0; i<slideDownArr.length; i++){
+		slideDownArr[i].style.backgroundImage = `url(${slideDownPics[index][i]})`;
+	}
+	document.querySelector(".slide-down").style.animationName = 'slideDown';
+}))
+
+document.querySelectorAll(".flex-col:not(#hotel-summary)").forEach(col => col.addEventListener('mouseleave', (e) => {
+	document.querySelector(".slide-down").style.animationName = 'slideUp';
+}))
+
+for(let i=0; i<slideDownPics.length; i++){
+	for(let j=0; j<slideDownPics[i].length; j++){
+		new Image().src = slideDownPics[i][j];
+	}
+}
+</script>
+</body>
+</html>
